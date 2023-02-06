@@ -10,7 +10,6 @@ class Book < ApplicationRecord
     favorites.exists?(user_id: user.id)
   end
 
-  #検索方法分岐
   def self.looks(search, word)
     if search == "perfect_match"
       @book = Book.where("title LIKE?","#{word}")
